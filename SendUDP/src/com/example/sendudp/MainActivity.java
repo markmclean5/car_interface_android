@@ -72,6 +72,12 @@ public class MainActivity extends Activity {
     	Intent intent = new Intent(this, Draw.class);
         startActivity(intent);
     }
+ // surfaceView: Executes when the GL button is pressed
+    // Launches SurfaceView / Canvas activity
+    public void surfaceView(View view) {
+    	Intent intent = new Intent(this, SurfaceViewActivity.class);
+        startActivity(intent);
+    }
     
     // settings: Executes when the Settings button is pressed
     // Launches settings activity

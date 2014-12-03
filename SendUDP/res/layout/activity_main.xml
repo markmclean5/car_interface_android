@@ -38,16 +38,6 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"
-        android:onClick="sendMessage"
-        android:text="@string/button_send" />
-
-    <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -65,25 +55,45 @@
         android:layout_toRightOf="@+id/button2"
         android:onClick="graphicsView"
         android:text="OpenGL" />
-    <Button
-        android:id="@+id/canvasButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/button2"
-        android:layout_marginLeft="49dp"
-        android:layout_toRightOf="@+id/openGL"
-        android:onClick="drawView"
-        android:text="Canvas" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/settingsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/button2"
         android:layout_alignBottom="@+id/button2"
-        android:layout_alignLeft="@+id/linearLayout1"
-        android:layout_marginLeft="125dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="16dp"
         android:onClick="settings"
         android:text="Settings" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="45dp"
+        android:layout_toRightOf="@+id/settingsButton"
+        android:onClick="sendMessage"
+        android:text="@string/button_send" />
+
+    <Button
+        android:id="@+id/drawViewButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/openGL"
+        android:layout_alignBottom="@+id/openGL"
+        android:layout_toRightOf="@+id/openGL"
+        android:onClick="drawView"
+        android:text="DrawView" />
+    <Button
+        android:id="@+id/surfaceViewButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/settingsButton"
+        android:layout_alignBottom="@+id/settingsButton"
+        android:layout_toRightOf="@+id/drawViewButton"
+        android:onClick="surfaceView"
+        android:text="SurfaceView" />
 
 </RelativeLayout>

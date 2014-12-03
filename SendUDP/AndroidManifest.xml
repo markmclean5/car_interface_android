@@ -40,6 +40,10 @@
             android:name=".Draw"
             android:label="@string/title_activity_draw" >
         </activity>
+        <activity
+            android:name=".SurfaceViewActivity"
+            android:label="@string/title_activity_surface_view" >
+        </activity>
     </application>
 
 </manifest>

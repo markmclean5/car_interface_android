@@ -31,6 +31,7 @@ public class DrawView extends View implements OnTouchListener {
 
         paint.setColor(Color.BLUE);
         paint.setAntiAlias(true);
+        
     }
     
 
@@ -43,13 +44,13 @@ public class DrawView extends View implements OnTouchListener {
         int height = this.getHeight();
        
         // Gauge properties
-        int radius = width/4; 
-        int center_x = radius+100; // small offsets from sides
-        int center_y = radius+50;
+        int radius = height/2; 
+        int center_x = radius; // small offsets from sides
+        int center_y = height/2;
         int tick_length = 40;
         
         // Left gauge
-        paint.setColor(Color.BLACK);
+        paint.setColor(Color.WHITE);
         paint.setStrokeWidth(10);
         paint.setStyle(Paint.Style.STROKE);
         canvas.drawCircle(center_x, center_y, radius, paint);
