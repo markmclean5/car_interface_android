@@ -18,7 +18,7 @@ public class SurfaceViewActivity extends Activity implements Runnable {
   private SurfaceHolder holder;
   private boolean locker=true;
   private Thread thread;
-
+ 
   
     @Override
     public void onCreate(Bundle savedInstanceState) {
