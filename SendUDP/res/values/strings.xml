@@ -9,5 +9,6 @@
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="title_activity_draw">Draw</string>
     <string name="title_activity_surface_view">SurfaceViewActivity</string>
+    <string name="title_activity_home_automation">HomeAutomation</string>
 
 </resources>

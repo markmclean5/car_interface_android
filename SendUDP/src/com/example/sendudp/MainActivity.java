@@ -79,6 +79,13 @@ public class MainActivity extends Activity {
         startActivity(intent);
     }
     
+    // homeAutomation: Executes when the Home Automation button is pressed
+    // Launches Home Automation activity
+    public void homeAutomation(View view) {
+    	Intent intent = new Intent(this, HomeAutomation.class);
+        startActivity(intent);
+    }
+    
     // settings: Executes when the Settings button is pressed
     // Launches settings activity
     public void settings(View view) {

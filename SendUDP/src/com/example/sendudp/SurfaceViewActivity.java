@@ -76,9 +76,8 @@ public class SurfaceViewActivity extends Activity implements Runnable {
     
     if(needleAngle>359) needleAngle = 0;
 	
-    
    
-    // Gauge properties
+    // Gauge size and location
     int radius = height/2-10; 
     int center_x = radius + 10; // small offsets from sides
     int center_y = height/2;
@@ -96,9 +95,20 @@ public class SurfaceViewActivity extends Activity implements Runnable {
     paint.setColor(Color.RED);
     canvas.drawCircle(center_x, center_y, needleWidth/2, paint);
     
+    // Gauge attributes
+    int startAngle = -45;
+    int stopAngle = 235;
     
-    for(int angle = 0; angle < 360; angle+=15) {
-    	
+    int startValue = -10;
+    int stopValue = 10;
+    double valueInterval = 1;
+    double numValues = (stopValue - startValue) / valueInterval;
+    
+    double angleInterval = (stopAngle - startAngle) / numValues;
+    
+    // Loop around gauge
+    double valueLabel = startValue;
+    for(double angle = startAngle; angle <= stopAngle; angle+=angleInterval) {
     	// Draw tick marks
     	paint.setStyle(Paint.Style.STROKE);
     	paint.setColor(Color.BLACK);
@@ -115,7 +125,14 @@ public class SurfaceViewActivity extends Activity implements Runnable {
     	paint.setTypeface(Typeface.MONOSPACE);
     	paint.setStyle(Paint.Style.FILL);
         paint.setTextSize(40);
-        canvas.drawText(Integer.toString(angle), text_x, text_y, paint);
+        
+        //Check if label is an integer number - if so print without decimal point
+        if((valueLabel == Math.floor(valueLabel)) && !Double.isInfinite(valueLabel)) {
+        	int label = (int) valueLabel;
+            canvas.drawText(Integer.toString(label), text_x, text_y, paint);
+        }
+        else canvas.drawText(Double.toString(valueLabel), text_x, text_y, paint);
+        valueLabel += valueInterval;
     }
     
     // Draw needle line
@@ -128,21 +145,13 @@ public class SurfaceViewActivity extends Activity implements Runnable {
 	canvas.drawLine(start_x, start_y, end_x, end_y, paint);
 	
 	// draw needle triangle;
-	
-	
 	paint.setStyle(Paint.Style.FILL);
 	int p1_x = end_x + (int) (needleWidth/2*Math.sin(Math.toRadians((double)needleAngle)));
 	int p1_y = end_y - (int) (needleWidth/2*Math.cos(Math.toRadians((double)needleAngle)));
-	
 	int p2_x = end_x - (int) (needleWidth/2*Math.sin(Math.toRadians((double)needleAngle)));
 	int p2_y = end_y + (int) (needleWidth/2*Math.cos(Math.toRadians((double)needleAngle)));
-	
 	int p3_x = center_x - (int) (.75*radius*Math.cos(Math.toRadians((double)needleAngle)));
     int p3_y = center_y - (int) (.75*radius*Math.sin(Math.toRadians((double)needleAngle)));
-    
-
-    
-    
     Path path = new Path();
     path.reset();
     paint.setStrokeWidth(3);
@@ -153,11 +162,7 @@ public class SurfaceViewActivity extends Activity implements Runnable {
     path.lineTo(p3_x, p3_y);
     path.lineTo(p1_x, p1_y);
     path.close();
-
     canvas.drawPath(path, paint);
-    
-    
-    
     
 	// Display frames per second in bottom left hand corner of surfaceView
     paint.setStyle(Paint.Style.FILL);

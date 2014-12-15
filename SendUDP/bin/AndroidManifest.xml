@@ -44,6 +44,10 @@
             android:name=".SurfaceViewActivity"
             android:label="@string/title_activity_surface_view" >
         </activity>
+        <activity
+            android:name=".HomeAutomation"
+            android:label="@string/title_activity_home_automation" >
+        </activity>
     </application>
 
 </manifest>

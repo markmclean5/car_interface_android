@@ -95,5 +95,14 @@
         android:layout_toRightOf="@+id/drawViewButton"
         android:onClick="surfaceView"
         android:text="SurfaceView" />
+    <Button
+        android:id="@+id/homeAutomationButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/settingsButton"
+        android:layout_alignBottom="@+id/settingsButton"
+        android:layout_toRightOf="@+id/surfaceViewButton"
+        android:onClick="homeAutomation"
+        android:text="Home Automation" />
 
 </RelativeLayout>
