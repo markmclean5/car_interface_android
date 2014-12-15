@@ -94,7 +94,7 @@ public class MainActivity extends Activity {
     }
     
 	
-    // TransmitTask: Used to transmit UDP messages
+ // TransmitTask: Used to transmit UDP messages
     // doInBackground: calls runUdpClient() which sends the data
     // onPostExcecute: handles UI
 	public class TransmitTask extends AsyncTask<String, Void, String> {
@@ -109,11 +109,11 @@ public class MainActivity extends Activity {
 	    	tv1.append("Data sent: " + result + " \n");
 	    }
 	    private String runUdpClient(String input)  {
-	    	final int UDP_SERVER_PORT = 3490;
+	    	final int UDP_SERVER_PORT = 45678;
 	        DatagramSocket ds = null;
 	        try {
 	            ds = new DatagramSocket();
-	            InetAddress serverAddr = InetAddress.getByName("192.168.1.10");
+	            InetAddress serverAddr = InetAddress.getByName("10.0.0.19");
 	            DatagramPacket dp;
 	            dp = new DatagramPacket(input.getBytes(), input.length(), serverAddr, UDP_SERVER_PORT);
 	            ds.send(dp);

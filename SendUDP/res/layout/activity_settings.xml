@@ -112,5 +112,38 @@
         android:layout_toRightOf="@+id/portEditText"
         android:text="Set"
         android:onClick="setServerIp" />
+    
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/editText1"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="18dp"
+        android:textSize="20sp"
+        android:text="Device ID: " />
+    
+    <EditText
+        android:id="@+id/deviceNameEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:ems="15"
+        android:inputType="number"
+        android:maxLength="15"
+        android:text="CONTROLLER"/>
+    <Button
+        android:id="@+id/deviceNameSetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/deviceNameEditText"
+        android:layout_alignBottom="@+id/deviceNameEditText"
+        android:layout_marginLeft="50dp"
+        android:layout_toRightOf="@+id/deviceNameEditText"
+        android:text="Set"
+        android:onClick="setDeviceName" />
 
 </RelativeLayout>

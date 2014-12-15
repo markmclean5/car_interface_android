@@ -20,11 +20,13 @@ public class SettingsActivity extends Activity {
 		EditText text1 = (EditText)findViewById(R.id.editText1);
 		EditText text2 = (EditText)findViewById(R.id.editText2);
 		EditText text3 = (EditText)findViewById(R.id.editText3);
+		EditText text4 = (EditText)findViewById(R.id.deviceNameEditText);
 		
 		text0.setText(pref.getString("server_ip_0", "0"));
 		text1.setText(pref.getString("server_ip_1", "1"));
 		text2.setText(pref.getString("server_ip_2", "2"));
 		text3.setText(pref.getString("server_ip_3", "3"));
+		text4.setText(pref.getString("deviceName", "CONTROLLER"));
 		
 	}
 
@@ -85,8 +87,13 @@ public class SettingsActivity extends Activity {
 		editor.putString("server_ip", serverIpAddress);
 		editor.commit();
 		
-
-		
-
+	}
+	
+	public void setDeviceName(View view) {
+		EditText text4 = (EditText)findViewById(R.id.deviceNameEditText);
+		SharedPreferences pref = getApplicationContext().getSharedPreferences("SendUDP", MODE_PRIVATE); 
+        Editor editor = pref.edit();
+        editor.putString("deviceName", text4.getText().toString());
+        editor.commit();
 	}
 }

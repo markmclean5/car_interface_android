@@ -27,11 +27,13 @@ public final class R {
         public static final int lightbulb_on=0x7f020002;
     }
     public static final class id {
-        public static final int action_settings=0x7f080017;
+        public static final int action_settings=0x7f08001a;
         public static final int button1=0x7f080003;
         public static final int button2=0x7f080004;
-        public static final int buttonswap=0x7f080015;
+        public static final int buttonswap=0x7f080018;
         public static final int container=0x7f08000a;
+        public static final int deviceNameEditText=0x7f080016;
+        public static final int deviceNameSetButton=0x7f080017;
         public static final int drawViewButton=0x7f080007;
         public static final int editText0=0x7f08000b;
         public static final int editText1=0x7f08000d;
@@ -43,7 +45,7 @@ public final class R {
         public static final int ipAddrDec1=0x7f08000e;
         public static final int ipAddrDec2=0x7f080010;
         public static final int linearLayout1=0x7f080001;
-        public static final int mysurface=0x7f080016;
+        public static final int mysurface=0x7f080019;
         public static final int openGL=0x7f080005;
         public static final int portEditText=0x7f080013;
         public static final int portTextView=0x7f080012;
@@ -51,6 +53,7 @@ public final class R {
         public static final int settingsButton=0x7f080006;
         public static final int surfaceViewButton=0x7f080008;
         public static final int textView1=0x7f080002;
+        public static final int textView2=0x7f080015;
     }
     public static final class layout {
         public static final int activity_draw=0x7f030000;
