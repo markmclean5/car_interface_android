@@ -113,7 +113,7 @@ public class MainActivity extends Activity {
 	        DatagramSocket ds = null;
 	        try {
 	            ds = new DatagramSocket();
-	            InetAddress serverAddr = InetAddress.getByName("10.0.0.19");
+	            InetAddress serverAddr = InetAddress.getByName("10.0.0.21");
 	            DatagramPacket dp;
 	            dp = new DatagramPacket(input.getBytes(), input.length(), serverAddr, UDP_SERVER_PORT);
 	            ds.send(dp);
